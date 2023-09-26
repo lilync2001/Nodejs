@@ -4,9 +4,9 @@
   "description": "",
   "main": "routing.js",
   "scripts": {
-    "dev:1": "nodemon 1.http.js",
-    "dev:2": "nodemon 2.routing.js",
-    "dev:3": "node --watch 3.express.js",
+    "dev:1": "nodemon http.js",
+    "dev:2": "nodemon routing.js",
+    "dev:3": "node --watch express.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

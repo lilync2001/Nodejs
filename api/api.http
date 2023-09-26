@@ -1,7 +1,7 @@
 //Recuperar informacion del pokemon ditto
-//GET http://localhost:1234/pokemon/ditto
+GET http://localhost:1234/pokemon/ditto
 
-//crear un pokemon
+###crear un pokemon
 POST http://localhost:1234/pokemon
 Content-Type: application/json
 
@@ -12,3 +12,4 @@ Content-Type: application/json
         "transform"
     ]
 }
+
