@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/lilync2001/Nodejs#readme",
   "devDependencies": {
+    "nodemon": "^3.0.1",
     "standard": "^17.1.0"
   }
 }

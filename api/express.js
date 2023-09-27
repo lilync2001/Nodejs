@@ -4,9 +4,12 @@ const express= require('express')
 const app=express()
 app.disable ('x-powered-by')
 
+app.use(express.json())
+//esta linea reemplaza a todo el bloqe comentado 
+
 //middleware puede ir entre rutas o al final 
 
-app.use((req,res,next)=>{
+/* app.use((req,res,next)=>{
   if(req.method != 'POST') return next()
   if(req.headers['content-type']!= 'application/json') return next()
   //solo se llegan request con POST y content-type: json
@@ -27,7 +30,7 @@ app.use((req,res,next)=>{
       next()
   })
 })
-
+ */
 
 app.get('/pokemon/ditto',(req,res) => {
     res.json(ditto)
