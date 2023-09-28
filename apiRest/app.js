@@ -3,7 +3,7 @@ const movies = require('./movie.json')
 const crypto = require('node:crypto')
 const app = express()
 app.disable('x-powered-by')
-
+app.use(express.json())
 
 //todos los recursos que sean moovies se indentifican como /movies
 app.get('/movies', (req,res)=>{
@@ -26,6 +26,7 @@ app.get('/movies/:id',(req,res)=>{
 })
 
 app.post('/movies', (req, res) => {    
+   console.log(req.body)
     const{
         title,
         genre,
