@@ -1,4 +1,4 @@
-const z = require('zod') //validaciones tipos de datos
+import z from 'zod' //validaciones tipos de datos
 //validar
 const movieSchema=z.object({
     title:z.string({
@@ -13,15 +13,11 @@ const movieSchema=z.object({
     genre: z.array(z.enum(['Action', 'Adventure', 'Crime', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Thriller', 'Sci-Fi']))
    })
 
-function validateMovie(object){
+export function validateMovie(object){
     return movieSchema.safeParse(object)
 }
 
-function validatePartialMovie(object){
+export function validatePartialMovie(object){
     return movieSchema.partial().safeParse(object)
 }
 
-module.exports={
-    validateMovie,
-    validatePartialMovie
-}
