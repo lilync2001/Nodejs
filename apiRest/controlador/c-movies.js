@@ -1,4 +1,5 @@
-import { MovieModel } from '../modelo/movie.js'
+import { MovieModel } from '../modelo/postgres/movie.js'
+//import { MovieModel } from '../modelo/local-file-system/movie.js'
 import { validateMovie, validatePartialMovie } from '../schemas/movie.js'
 
 export class MovieController{
