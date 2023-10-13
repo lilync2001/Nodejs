@@ -3,12 +3,23 @@ import { MovieModel } from '../modelo/postgres/movie.js'
 import { validateMovie, validatePartialMovie } from '../schemas/movie.js'
 
 export class MovieController{
+   
+     /*    constructor ({ movieModel }) {
+          this.movieModel = movieModel
+        }
+      
+        getAll = async (req, res) => {
+          const { genre } = req.query
+          const movies = await this.movieModel.getAll({ genre })
+          res.json(movies)
+        }
+       */
     static async getAll  (req, res){
          const{genre}= req.query
          const movies = await MovieModel.getAll({genre})
          res.json(movies)
     }
-
+ 
     static async getById(req,res){
         const {id}=req.params 
         const movie = await MovieModel.getById({id})     

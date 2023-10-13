@@ -8,36 +8,28 @@ const config = {
     database: 'db_movies'
 };
 
- const client =  new  pg.Client(config);
+ const client =  new pg.Client(config);
 
- async function connectToDatabase() {
-    try {
-        await client.connect();
-        console.log('Conexión exitosa a PostgreSQL');
-        
-        // Realiza tus consultas y operaciones aquí
-    
-        
-        await client.end(); // Cierra la conexión cuando hayas terminado
-    } catch (error) {
-        console.error('Error de conexión:', error);
+/*  await client.connect()
+ .then(() => console.log('Conexión exitosa'))
+ .catch(err => console.error('Error al conectar:', err)); */
+
+    export class MovieModel {
+        static async getAll({ genre }) {
+            const result = await client.query('SELECT * FROM movie');
+            console.log(result);
+        }
     }
-} 
 
-connectToDatabase(); 
- 
-export class MovieModel{
-    static async getAll  ({genre}){
-        console.log('getAll')
-        const result = await client.query(
-            'SELECT id, title, year, director, duration, poster, rate FROM movie;'
-        )
-
-    console.log(result.rows) 
-       
-   }
-
-   static async getById({id}){
+    /*  client.query('SELECT * FROM movie')
+  .then(result => {
+    console.log(result.rows);
+  })
+  .catch(err => {
+    console.error('Error al ejecutar la consulta:', err);
+  });
+ */
+   /* static async getById({id}){
        
    }
 
@@ -51,6 +43,5 @@ export class MovieModel{
 
    static async update(req, res){   
        
-   }
+   } */
 
-}
